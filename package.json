@@ -1,0 +1,12 @@
+{
+  "name": "mastering-nuxt",
+  "dependencies": {
+    "@babel/preset-env": "7.12.13",
+    "nuxt": "2.14.7"
+  },
+  "scripts": {
+    "dev": "nuxt",
+    "build": "nuxt build",
+    "start": "nuxt start"
+  }
+}
