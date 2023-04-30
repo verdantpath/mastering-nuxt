@@ -3,6 +3,7 @@
 .DS_Store
 .nuxt
 layouts/source_default.vue
+plugins/source_map.client.js
 
 # FOLDERS
 
