@@ -11,7 +11,7 @@ export default function(context, inject) {
   
   function addScript() {
     const script = document.createElement('script')
-    script.src = "https://maps.googleapis.com/maps/api/js?key=AIzaSyBwjvs4By5bgsB7oKgbsfDh1Mcom0dn9Qc&libraries=places&callback=initGoogleMaps"
+    script.src = "https://maps.googleapis.com/maps/api/js?key=AIzaSyD1nQpztvVGCUB_gG6gxfqcBFJZz2Eib6k&libraries=places&callback=initGoogleMaps"
     script.async = true
     window.initGoogleMaps = initGoogleMaps
     document.head.appendChild(script)
@@ -44,6 +44,7 @@ export default function(context, inject) {
   }
 
   function showMap(canvas,lat,lng,markers) {
+    console.log('showMap fired')
     if(!isLoaded) {
       waiting.push({
         fn: showMap,
@@ -51,7 +52,7 @@ export default function(context, inject) {
       })
       return
     }
-    console.log('showMap fired')
+    console.log('Google data loaded')
     const mapOptions = {
       zoom: 18,
       center: new window.google.maps.LatLng(lat, lng),
