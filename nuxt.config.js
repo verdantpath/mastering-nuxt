@@ -17,5 +17,7 @@ export default {
   },
   plugins: ['~/plugins/maps.client',
     '~/plugins/dataApi',
+  ],
+  modules: [
   ]
 }
