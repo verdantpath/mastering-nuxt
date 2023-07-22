@@ -21,7 +21,7 @@
     },
     methods: {
       highlightMarker(homeId, isHighlighted) {
-        console.log('@#$ highlightMarker called')
+        // console.log('@#$ highlightMarker called')
         document.getElementsByClassName(`home-${homeId}`)[0]?.classList?.toggle('marker-highlight', isHighlighted)
       },
       updateMap() {
