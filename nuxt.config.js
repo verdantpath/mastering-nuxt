@@ -19,5 +19,7 @@ export default {
     '~/plugins/dataApi',
   ],
   modules: [
-  ]
+  ],
+  buildModules: ['@nuxtjs/tailwindcss']
+
 }
