@@ -1,5 +1,6 @@
 # FILES
 
+.env
 .DS_Store
 .nuxt
 layouts/source_default.vue
