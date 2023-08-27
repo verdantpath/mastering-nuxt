@@ -2,11 +2,20 @@
   "name": "mastering-nuxt",
   "dependencies": {
     "@babel/preset-env": "7.12.13",
+    "cookie": "^0.5.0",
+    "google-auth-library": "7.0.2",
+    "js-cookie": "2.2.1",
+    "jwt-decode": "^3.1.2",
     "nuxt": "2.14.7"
   },
   "scripts": {
     "dev": "nuxt",
     "build": "nuxt build",
     "start": "nuxt start"
+  },
+  "devDependencies": {
+    "@nuxtjs/tailwindcss": "3.4.2",
+    "sass": "^1.64.1",
+    "sass-loader": "10.1.1"
   }
 }
