@@ -3,6 +3,7 @@ export default function(context, inject) {
   let waiting = []
 
   addScript()
+  window.initGoogleMaps = initGoogleMaps
 
   inject('maps', {
     showMap,
@@ -13,7 +14,7 @@ export default function(context, inject) {
     const script = document.createElement('script')
     script.src = "https://maps.googleapis.com/maps/api/js?key=AIzaSyD1nQpztvVGCUB_gG6gxfqcBFJZz2Eib6k&libraries=places&callback=initGoogleMaps"
     script.async = true
-    window.initGoogleMaps = initGoogleMaps
+    
     document.head.appendChild(script)
   }
   
@@ -57,12 +58,24 @@ export default function(context, inject) {
       zoom: 18,
       center: new window.google.maps.LatLng(lat, lng),
       disableDefaultUI: true,
-      zoomControl: true
+      zoomControl: true,
+      styles: [{
+        featureType: 'poi.business', 
+        elementType: 'labels.icon',
+        stylers: [
+          {
+            visibility: 'off'
+          }
+        ]
+      }],
     }
     const map = new window.google.maps.Map(canvas, mapOptions)
     if (!markers) {
       const position = new window.google.maps.LatLng(lat, lng)
-      const marker = new window.google.maps.Marker({ position })
+      const marker = new window.google.maps.Marker({ 
+        position, 
+        clickable: false 
+      })
       marker.setMap(map)
       return 
     }
@@ -74,9 +87,10 @@ export default function(context, inject) {
         position,
         label: {
           text: `$${home.pricePerNight}`,
-          className: 'marker'
+          className: `marker home-${home.id}`
         },
         icon: 'https://maps.gstatic.com/mapfiles/transparent.png',
+        clickable: false
 
       })
       marker.setMap(map)
