@@ -2,11 +2,13 @@
   "name": "mastering-nuxt",
   "dependencies": {
     "@babel/preset-env": "7.12.13",
+    "body-parser": "^1.20.2",
     "cookie": "^0.5.0",
     "google-auth-library": "7.0.2",
     "js-cookie": "2.2.1",
     "jwt-decode": "^3.1.2",
-    "nuxt": "2.14.7"
+    "nuxt": "2.14.7",
+    "uuid": "^9.0.0"
   },
   "scripts": {
     "dev": "nuxt",
