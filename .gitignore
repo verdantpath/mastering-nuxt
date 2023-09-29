@@ -5,6 +5,7 @@
 .nuxt
 layouts/source_default.vue
 plugins/source_map.client.js
+modules/--auth.js
 
 # FOLDERS
 
