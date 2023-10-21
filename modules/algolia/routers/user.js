@@ -10,6 +10,7 @@ export default (apis) => {
     const payload = makeUserPayload(identity)
     apis.user.create(req.identity, payload)
     sendJSON(payload, res)
+    // console.log(req.identity);
   }
 
 
