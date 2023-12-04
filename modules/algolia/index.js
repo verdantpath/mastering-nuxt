@@ -12,6 +12,4 @@ export default function() {
     app.use('/api/user', userRouter(apis))
     app.use('/api/homes', homesRouter(apis))
   })
-
-  
 }
