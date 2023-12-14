@@ -1,7 +1,8 @@
-<template><div>
+<template>
+<div>
 <div>[list of homes here]</div>
 <h2 class="text-xl bold">Add a Home</h2>
-<form @submit.prevent="onSubmit" action="" class="form">
+<form @submit.prevent="onSubmit" class="form">
   Images:<br />
   <input type='text' v-model='home.images[0]' class="w-3/4" /><br /> 
   <input type='text' v-model='home.images[1]' class="w-3/4" /><br /> 
@@ -34,7 +35,8 @@
   Country: <input type="text" v-model="home.location.country" class="w-26"><br />
   <button class="border px-4 py-2 border-gray-400">Add</button>
 </form>
-</div></template>
+</div>
+</template>
 <script>
   export default {
     data() {
@@ -75,7 +77,7 @@
          await fetch('/api/homes', {
             method: "POST",
             body: JSON.stringify(this.home),
-            header: {
+            headers: {
               'Content-Type': 'application/json',
             }
          })
